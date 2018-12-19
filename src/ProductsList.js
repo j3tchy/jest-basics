@@ -1,13 +1,12 @@
 import React from "react";
 
 const Products = ({ products, selectProduct }) => {
-    var linkList = products.map(product => {
+    var linkList = products.map((product) => {
         return (
             <li key={product.id}>
                 <a
-                    onClick={() => selectProduct(product.id)}
-                    style={{ cursor: "pointer" }}
-                >
+                    onClick={(event) => selectProduct(product.id)}
+                    style={{ cursor: "pointer" }}>
                     {product.name}
                 </a>
             </li>
@@ -24,16 +23,14 @@ const Products = ({ products, selectProduct }) => {
                         width: "30%",
                         background: "#f0f0f0",
                         marginLeft: "auto"
-                    }}
-                >
+                    }}>
                     <h3> Products</h3>
                     <ul
                         style={{
                             listStyleType: "none",
                             padding: 0,
                             fontSize: "15px"
-                        }}
-                    >
+                        }}>
                         {" "}
                         {linkList}{" "}
                     </ul>
